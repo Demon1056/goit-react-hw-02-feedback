@@ -10,7 +10,8 @@ export class App extends Component {
     bad: 0,
   };
   countTotalFeedback = () => {
-    return Object.values(this.state).reduce((acc, item) => {
+    const totalFeedback = Object.values(this.state);
+    return totalFeedback.reduce((acc, item) => {
       acc += item;
       return acc;
     }, 0);
@@ -28,6 +29,7 @@ export class App extends Component {
 
   render() {
     const options = Object.keys(this.state);
+    const { good, neutral, bad } = this.state;
     return (
       <Section tittle="Please leave feedback">
         <FeedbackOptions
@@ -37,9 +39,9 @@ export class App extends Component {
         <br />
         {this.countTotalFeedback() ? (
           <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
+            good={good}
+            neutral={neutral}
+            bad={bad}
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
           ></Statistics>
