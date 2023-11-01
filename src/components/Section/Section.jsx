@@ -8,6 +8,7 @@ export const Section = ({ tittle, children }) => {
     </div>
   );
 };
+
 Section.propTypes = {
   tittle: PropTypes.string,
 };

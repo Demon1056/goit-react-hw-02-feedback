@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Button } from 'components/Button/Button';
+
 export const FeedbackOptions = ({ options, onLiveFeedBack }) => {
   return (
     <>
